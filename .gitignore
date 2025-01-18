@@ -1,3 +1,5 @@
 /shelf/
 /.idea
 /httpRequests/
+/worknet-backend/node_modules
+worknet-backend/.env
