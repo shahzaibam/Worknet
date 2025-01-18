@@ -1,0 +1,23 @@
+<div *ngIf="clockingRecords && clockingRecords.length > 0">
+  <h3 class="text-xl font-semibold mb-4">Registros de Marcaje:</h3>
+
+  <!-- Tabla con TailwindCSS -->
+  <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
+    <thead>
+    <tr class="bg-gray-100 text-left">
+      <th class="px-6 py-3 text-sm font-semibold text-gray-700">Empleado ID</th>
+      <th class="px-6 py-3 text-sm font-semibold text-gray-700">Hora de Entrada</th>
+      <th class="px-6 py-3 text-sm font-semibold text-gray-700">Hora de Salida</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let record of clockingRecords" class="border-t">
+      <td class="px-6 py-3 text-sm text-gray-800">{{ record.employeeId }}</td>
+      <td class="px-6 py-3 text-sm text-gray-800">{{ record.clockIn | date:'short' }}</td>
+      <td class="px-6 py-3 text-sm text-gray-800">
+        {{ record.clockOut ? (record.clockOut | date:'short') : 'Pendiente' }}
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
